@@ -1,5 +1,7 @@
 # refactoring_advprogramming
 
+Opdracht assignment als volgt:
+
 | Issue assigning       | Refactoring           | Comment on refactoring  |
 |:---------------------:|:---------------------:|:-----------------------:|
 | Martin aan Dimiter    | Dimiter van Martin    | Geoffrey op Dimiter     |
