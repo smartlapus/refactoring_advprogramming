@@ -5,9 +5,9 @@ Opdracht assignment als volgt:
 | Issue assigning       | Refactoring           | Comment on refactoring  |
 |:---------------------:|:---------------------:|:-----------------------:|
 | Martin aan Dimiter    | Dimiter van Martin    | Geoffrey op Dimiter     |
-| Dimiter aan Geoffrey  | Geoffrey van Dimiter  | Mark op Geoffrey        |
+| Mark aan Geoffrey     | Geoffrey van Mark     | Dimiter op Geoffrey     |
 | Geoffrey aan Mark     | Mark van Geoffrey     | Martin op Mark          |
-| Mark aan Martin       | Martin van Mark       | Dimiter op Martin       |
+| Dimiter aan Martin    | Martin van Dimiter    | Mark op Martin          |
 
 <hr>
 
