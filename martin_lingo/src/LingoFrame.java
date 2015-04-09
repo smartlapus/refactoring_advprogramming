@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
 
 public class LingoFrame extends JFrame implements ActionListener {
@@ -141,14 +142,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 						| letters[0].equals(lingoWord[3])
 						| letters[0].equals(lingoWord[4])) {
 					currentColumn = 0;
-					graphics.setColor(Color.YELLOW);
-					graphics.fillOval(column[currentColumn] - 17,
-							textline[currentLine] - 57, 75, 75);
-
-					graphics.setColor(Color.ORANGE);
-					graphics.drawString(letters[0], column[currentColumn],
-							textline[currentLine]); // (string, from left,
-													// from top)
+					drawLetterInColorOval(textline, column, letters, Color.yellow);
 					System.out.println("Array 0 is in the word");
 				}
 				if (letters[1].equals(lingoWord[0])
@@ -156,13 +150,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 						| letters[1].equals(lingoWord[3])
 						| letters[1].equals(lingoWord[4])) {
 					currentColumn = 1;
-					graphics.setColor(Color.YELLOW);
-					graphics.fillOval(column[currentColumn] - 17,
-							textline[currentLine] - 57, 75, 75);
-
-					graphics.setColor(Color.ORANGE);
-					graphics.drawString(letters[1], column[currentColumn],
-							textline[currentLine]); 
+					drawLetterInColorOval(textline, column, letters, Color.yellow);
 					System.out.println("Array 0 is in the word");
 				}
 				if (letters[2].equals(lingoWord[0])
@@ -170,13 +158,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 						| letters[2].equals(lingoWord[3])
 						| letters[2].equals(lingoWord[4])) {
 					currentColumn = 2;
-					graphics.setColor(Color.YELLOW);
-					graphics.fillOval(column[currentColumn] - 17,
-							textline[currentLine] - 57, 75, 75);
-
-					graphics.setColor(Color.ORANGE);
-					graphics.drawString(letters[2], column[currentColumn],
-							textline[currentLine]);
+					drawLetterInColorOval(textline, column, letters, Color.yellow);
 					System.out.println("Array 0 is in the word");
 				}
 				if (letters[3].equals(lingoWord[0])
@@ -184,13 +166,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 						| letters[3].equals(lingoWord[2])
 						| letters[3].equals(lingoWord[4])) {
 					currentColumn = 3;
-					graphics.setColor(Color.YELLOW);
-					graphics.fillOval(column[currentColumn] - 17,
-							textline[currentLine] - 57, 75, 75);
-
-					graphics.setColor(Color.ORANGE);
-					graphics.drawString(letters[3], column[currentColumn],
-							textline[currentLine]); 
+					drawLetterInColorOval(textline, column, letters, Color.yellow);
 					System.out.println("Array 0 is in the word");
 				}
 				if (letters[4].equals(lingoWord[1])
@@ -198,27 +174,14 @@ public class LingoFrame extends JFrame implements ActionListener {
 						| letters[4].equals(lingoWord[3])
 						| letters[4].equals(lingoWord[0])) {
 					currentColumn = 4;
-					graphics.setColor(Color.YELLOW);
-					graphics.fillOval(column[currentColumn] - 17,
-							textline[currentLine] - 57, 75, 75);
-
-					graphics.setColor(Color.ORANGE);
-					graphics.drawString(letters[4], column[currentColumn],
-							textline[currentLine]);
+					drawLetterInColorOval(textline, column, letters, Color.yellow);
 					System.out.println("Array 0 is in the word");
 				}
 
 				if (lingoWord[0].equals(letters[0])) {
 					for (lingoWord[0].equals(letters[0]); currentLine < 5; currentLine++) {
 						currentColumn = 0;
-						graphics.setColor(Color.RED);
-						graphics.fillOval(column[currentColumn] - 17,
-								textline[currentLine] - 57, 75, 75);
-
-						graphics.setColor(Color.ORANGE);
-						graphics.drawString(letters[0],
-								column[currentColumn],
-								textline[currentLine]);
+						drawLetterInColorOval(textline, column, letters, Color.red);
 					}
 					currentLine = backupLine;
 					System.out.println("Array 0 matches");
@@ -227,14 +190,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 				if (lingoWord[1].equals(letters[1])) {
 					for (lingoWord[1].equals(letters[1]); currentLine < 5; currentLine++) {
 						currentColumn = 1;
-						graphics.setColor(Color.RED);
-						graphics.fillOval(column[currentColumn] - 17,
-								textline[currentLine] - 57, 75, 75);
-
-						graphics.setColor(Color.ORANGE);
-						graphics.drawString(letters[1],
-								column[currentColumn],
-								textline[currentLine]); 
+						drawLetterInColorOval(textline, column, letters, Color.red);
 					}
 					currentLine = backupLine;
 					System.out.println("Array 1 matches");
@@ -243,14 +199,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 				if (lingoWord[2].equals(letters[2])) {
 					for (lingoWord[2].equals(letters[2]); currentLine < 5; currentLine++) {
 						currentColumn = 2;
-						graphics.setColor(Color.RED);
-						graphics.fillOval(column[currentColumn] - 17,
-								textline[currentLine] - 57, 75, 75);
-
-						graphics.setColor(Color.ORANGE);
-						graphics.drawString(letters[2],
-								column[currentColumn],
-								textline[currentLine]);
+						drawLetterInColorOval(textline, column, letters, Color.red);
 					}
 					currentLine = backupLine;
 					System.out.println("Array 2 matches");
@@ -259,14 +208,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 				if (lingoWord[3].equals(letters[3])) {
 					for (lingoWord[3].equals(letters[3]); currentLine < 5; currentLine++) {
 						currentColumn = 3;
-						graphics.setColor(Color.RED);
-						graphics.fillOval(column[currentColumn] - 17,
-								textline[currentLine] - 57, 75, 75);
-
-						graphics.setColor(Color.ORANGE);
-						graphics.drawString(letters[3],
-								column[currentColumn],
-								textline[currentLine]); 
+						drawLetterInColorOval(textline, column, letters, Color.red);
 					}
 					currentLine = backupLine;
 					System.out.println("Array 3 matches");
@@ -275,14 +217,7 @@ public class LingoFrame extends JFrame implements ActionListener {
 				if (lingoWord[4].equals(letters[4])) {
 					for (lingoWord[4].equals(letters[4]); currentLine < 5; currentLine++) {
 						currentColumn = 4;
-						graphics.setColor(Color.RED);
-						graphics.fillOval(column[currentColumn] - 17,
-								textline[currentLine] - 57, 75, 75);
-
-						graphics.setColor(Color.ORANGE);
-						graphics.drawString(letters[4],
-								column[currentColumn],
-								textline[currentLine]);
+						drawLetterInColorOval(textline, column, letters, Color.red);
 					}
 					currentLine = backupLine;
 					System.out.println("Array 4 matches");
@@ -296,6 +231,18 @@ public class LingoFrame extends JFrame implements ActionListener {
 			System.out.println("Word entered was " + length
 					+ " characters long. Needs 5.");
 		}
+	}
+
+	private void drawLetterInColorOval(int[] textline, int[] column,
+			String[] letters, Color ovalColor) {
+		graphics.setColor(ovalColor);
+		graphics.fillOval(column[currentColumn] - 17,
+				textline[currentLine] - 57, 75, 75);
+
+		graphics.setColor(Color.ORANGE);
+		graphics.drawString(letters[0],
+				column[currentColumn],
+				textline[currentLine]);
 	}
 
 	public void gameWon() {
