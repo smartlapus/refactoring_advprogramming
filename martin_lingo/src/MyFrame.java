@@ -11,7 +11,6 @@ private JPanel panel;
 private JTextField inputTextField;
 private JButton enterButton;
 
-int i = 0; // Default value of first array is 0
 int win = 0;
 
 // Variables for location
@@ -132,10 +131,10 @@ public MyFrame()
 		        System.out.println("To guess word is: " + lingoWord[0] + lingoWord[1] + lingoWord[2] + lingoWord[3] + lingoWord[4]);
 			    
 			    // Adds letter of your chosen word in individual array objects in the letters array  
-				for (int x = 0, y = 1 ; i < 5 ; i++, x++, y++)
+				for (int x = 0, y = 1 ; x < 5 ; x++, y++)
 				{
-					letters[i] = inputText.substring(x,y);
-					System.out.println("Array " + i + " has letter: " + letters[i]);
+					letters[x] = inputText.substring(x,y);
+					System.out.println("Array " + x + " has letter: " + letters[x]);
 				}
 				// -- end of array objects --
 					
@@ -292,7 +291,6 @@ public MyFrame()
 				
 				
 				
-				i = 0;
 				currentColumn = 0;
 				currentLine += 1;	
 				backupLine = currentLine;
