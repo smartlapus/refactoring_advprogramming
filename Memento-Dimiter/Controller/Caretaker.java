@@ -11,15 +11,8 @@ public class Caretaker {
 	private static ViewController vc = new ViewController();
 
 	public static void main(String[] args) {
-		
 		List<Originator.Memento> savedStates = new ArrayList<Originator.Memento>();
-		
-		
-		
         Originator originator = new Originator();
-        
         vc.createGui(originator, savedStates);
-        
 	} 
-
 }

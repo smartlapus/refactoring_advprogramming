@@ -39,9 +39,7 @@ public class ViewController implements ActionListener {
 		
 		originator.set(stateField.getText());
 	    savedStates.add(originator.saveToMemento());
-	   
-		
-		// Panel with Undo and Redo buttons
+	   		
 	    undoButton.setVerticalTextPosition(AbstractButton.CENTER);
 	    undoButton.setHorizontalTextPosition(AbstractButton.LEADING);
 	    undoButton.setActionCommand("undo");
@@ -58,7 +56,6 @@ public class ViewController implements ActionListener {
 	    buttonPanel.add(undoButton);
 	    buttonPanel.add(redoButton);
 	    
-	    // Text Panel
 	    JPanel historyPanel = new JPanel();
 
 	    textArea = new JTextArea(5, 25);
@@ -68,7 +65,6 @@ public class ViewController implements ActionListener {
 	    scrollPane.setPreferredSize(new Dimension(350, 280));
 	    historyPanel.add(scrollPane, BorderLayout.CENTER);
 	    
-	    // Panel with text edit buttons
 	    stateField.setVisible(false);
 	    stateField.setPreferredSize(new Dimension(200,30));
 	    stateLabel.setVisible(true);
@@ -92,8 +88,6 @@ public class ViewController implements ActionListener {
 	    textPanel.add(stateField);
 	    textPanel.add(saveButton);
 
-
-	    // Main frame setup
         JFrame frame = new JFrame("Memento Example");
         frame.add(buttonPanel, BorderLayout.NORTH);
         frame.add(historyPanel, BorderLayout.CENTER);
@@ -105,50 +99,41 @@ public class ViewController implements ActionListener {
 	}
 	
 	public void actionPerformed(ActionEvent e) {
-        if(e.getActionCommand() == "undo") {
-        	
-        	System.out.println("Undo action event triggered");
-        	textArea.setText(textArea.getText() + "\nUndo action event triggered!");
-        	        	
-        	//UNDO
-        	state = state - 1;
+        if(e.getActionCommand() == ActionCommands.undo.toString()) {
+          	updateTextAreaWithValue("\nUndo action event triggered!");	
+        	updateState(-1);
         	originator.restoreFromMemento(savedStates.get(state));
         	updateButtons();
         	
-        } else if(e.getActionCommand() == "redo") {
-        	
-        	System.out.println("Redo action event triggered");
-        	textArea.setText(textArea.getText() + "\nRedo action event triggered");
-        	
-        	//REDO
-        	state = state + 1;
+        } else if(e.getActionCommand() == ActionCommands.redo.toString()) {
+          	updateTextAreaWithValue("\nRedo action event triggered");
+        	updateState(1);
         	originator.restoreFromMemento(savedStates.get(state));
         	updateButtons();
         	
-        } else if(e.getActionCommand() == "edit") {
-        	
-        	System.out.println("Edit action event triggered");
-        	textArea.setText(textArea.getText() + "\nEdit action event triggered");
-        	
-        	//EDIT
+        } else if(e.getActionCommand() == ActionCommands.edit.toString()) {
+           updateTextAreaWithValue("\nEdit action event triggered");
         	stateField.setText(stateLabel.getText());
         	toggleButtons();
-        	
         	undoButton.setEnabled(false);
-        	redoButton.setEnabled(false);
-        	
-        } else if(e.getActionCommand() == "save") {
-        	
-        	//SAVE
+        	redoButton.setEnabled(false);	
+        } else if(e.getActionCommand() == ActionCommands.save.toString()) {
         	stateLabel.setText(stateField.getText());
         	toggleButtons();
         	originator.set(stateField.getText());
             savedStates.add(originator.saveToMemento());
             state = savedStates.size() - 1;
-            updateButtons();
-            
+            updateButtons();       
         }
     }
+	
+	private void updateTextAreaWithValue(String textValue){
+		textArea.setText("" + textArea.getText() + textValue);
+	}
+	
+	private void updateState(int value){
+		state = state + value;
+	}
 	
 	private void toggleButtons() {
     	editButton.setVisible(!editButton.isVisible());
@@ -158,16 +143,38 @@ public class ViewController implements ActionListener {
 	}
 	
 	private void updateButtons() {
-		System.out.println("state:"+state+",size:"+savedStates.size());
 		stateLabel.setText(originator.get());
 		textArea.setText(textArea.getText() + "\nText Changed into: " + originator.get());
-		if(state > 0)
+		if(state > 0){
 			undoButton.setEnabled(true);
-		else
+		}
+		else{
 			undoButton.setEnabled(false);
-		if(state < savedStates.size()-1)
+		}
+		if(state < savedStates.size()-1){
 			redoButton.setEnabled(true);
-		else
+		}
+		else{
 			redoButton.setEnabled(false);
+		}
+	}
+	
+	public enum ActionCommands {
+		undo ("Undo"),
+		redo ("Redo"),
+		edit ("Edit"),
+		save ("Save");
+		
+		private final String action;
+		
+		private ActionCommands(String s){
+			action = s;
+		}
+		
+		public String toString(){
+			return action;
+		}
 	}
 }
+
+
