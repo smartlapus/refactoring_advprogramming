@@ -1,26 +1,3 @@
-/**
-Game: Lingo
-
-Functions buildup:
-- Player 1 and 2
-- An empty field with a grid of 5 x 5
-- A textfield for input
-- A button for processing
-- A "to guess" word
-
-Player fills in the text field.
-When a letter is in the word AND the correct position: gets a red circle behind it. The letter will always get drawn, also fhr the next remaining guesses.
-When a letter is in the word buut NOT on the correct positions: gets a yellow circle behind it.
-
-Technical functions:
-Word checker that checks per letter (charAtPosition())
-Individual draw function for when correct letter + position.
-
-
-
-**/
-
-
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
