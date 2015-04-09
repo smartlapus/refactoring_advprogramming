@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class MyFrame extends JFrame implements ActionListener {
+public class LingoFrame extends JFrame implements ActionListener {
 
 	private JLabel comment;
 	private JPanel panel;
@@ -14,7 +14,7 @@ public class MyFrame extends JFrame implements ActionListener {
 	int currentLine = 0;
 	int currentColumn = 0;
 
-	public MyFrame() {
+	public LingoFrame() {
 		setLayout(new FlowLayout());
 		setTitle("Opgave 4-6, LINGO!");
 		setSize(500, 500);
@@ -44,10 +44,10 @@ public class MyFrame extends JFrame implements ActionListener {
 		} catch (InterruptedException e) {
 		}
 
-		DrawGrid();
+		drawGrid();
 	}
 
-	public void DrawGrid() {
+	public void drawGrid() {
 		Graphics graphics = panel.getGraphics();
 		graphics.setColor(Color.WHITE);
 
