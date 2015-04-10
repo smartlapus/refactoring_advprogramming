@@ -35,28 +35,28 @@ public class TicTacToe extends JFrame implements ActionListener {
 	private void checkIfVictorious(int i) {
 		int player = playerXPlaying ? 0 : 1;
 
-		for(int j = 0; j < 8; j++) {
+		for(int winOption = 0; winOption < 8; winOption++) {
 			boolean check = false;
-			if(j == 0) {
+			if(winOption == 0) {
 				check = (i == 0 || i == 1 || i == 2);
-			} else if(j == 1) {
+			} else if(winOption == 1) {
 				check = (i == 3 || i == 4 || i == 5);
-			} else if(j == 2) {
+			} else if(winOption == 2) {
 				check = (i == 6 || i == 7 || i == 8);
-			} else if(j == 3) {
+			} else if(winOption == 3) {
 				check = (i == 0 || i == 3 || i == 6);
-			} else if(j == 4) {
+			} else if(winOption == 4) {
 				check = (i == 1 || i == 4 || i == 7);
-			} else if(j == 5) {
+			} else if(winOption == 5) {
 				check = (i == 2 || i == 5 || i == 8);
-			} else if(j == 6) {
+			} else if(winOption == 6) {
 				check = (i == 0 || i == 4 || i == 8);
-			} else if(j == 7) {
+			} else if(winOption == 7) {
 				check = (i == 2 || i == 4 || i == 6);
 			}
 			if(check) {
-				state[j][player]++;
-				if(state[j][player] == 3) {
+				state[winOption][player]++;
+				if(state[winOption][player] == 3) {
 					win();
 					return;
 				}
