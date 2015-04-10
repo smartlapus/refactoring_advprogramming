@@ -65,7 +65,7 @@ public class TicTacToe extends JFrame implements ActionListener {
 		if(turns == 9) {
 			draw();
 		}
-		playerXPlaying = !playerXPlaying;
+		playerXPlaying ^= true;
 	}
 	
 	private void win() {
