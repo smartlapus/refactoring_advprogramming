@@ -6,6 +6,7 @@ public class TicTacToe extends JFrame implements ActionListener {
 	private JButton[] buttons = new JButton[9];
 	private boolean playerXPlaying = true;
 	private int turns = 0;
+	// State defines the way the game is won (|,-,/,\) and the player who does (0, 1)
 	private int[][] state = new int[8][2];
 		
 	public TicTacToe() {
