@@ -32,27 +32,27 @@ public class TicTacToe extends JFrame implements ActionListener {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 	
-	private void checkIfVictorious(int i) {
+	private void checkIfVictorious(int field) {
 		int player = playerXPlaying ? 0 : 1;
 
 		for(int winOption = 0; winOption < 8; winOption++) {
 			boolean check = false;
 			if(winOption == 0) {
-				check = (i == 0 || i == 1 || i == 2);
+				check = (field == 0 || field == 1 || field == 2);
 			} else if(winOption == 1) {
-				check = (i == 3 || i == 4 || i == 5);
+				check = (field == 3 || field == 4 || field == 5);
 			} else if(winOption == 2) {
-				check = (i == 6 || i == 7 || i == 8);
+				check = (field == 6 || field == 7 || field == 8);
 			} else if(winOption == 3) {
-				check = (i == 0 || i == 3 || i == 6);
+				check = (field == 0 || field == 3 || field == 6);
 			} else if(winOption == 4) {
-				check = (i == 1 || i == 4 || i == 7);
+				check = (field == 1 || field == 4 || field == 7);
 			} else if(winOption == 5) {
-				check = (i == 2 || i == 5 || i == 8);
+				check = (field == 2 || field == 5 || field == 8);
 			} else if(winOption == 6) {
-				check = (i == 0 || i == 4 || i == 8);
+				check = (field == 0 || field == 4 || field == 8);
 			} else if(winOption == 7) {
-				check = (i == 2 || i == 4 || i == 6);
+				check = (field == 2 || field == 4 || field == 6);
 			}
 			if(check) {
 				state[winOption][player]++;
